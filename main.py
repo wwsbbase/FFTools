@@ -13,51 +13,58 @@ class ToolApp(object):
         self.arg = arg
         frame = Frame(arg)
         frame.pack()
+
+        frm_L = Frame(frame)
+        frm_M = Frame(frame)
+        frm_R = Frame(frame)
         # 源文件
-        self.sourceFileLabel = Label(frame, text="源文件：")
-        self.sourceFileLabel.pack()
+        self.sourceFileLabel = Label(frm_L, text="源文件：")
+        self.sourceFileLabel.pack(side=LEFT)
 
         self.sourceFileName = StringVar()
-        self.sourceFileEntry = Entry(frame,  textvariable=self.sourceFileName)
+        self.sourceFileEntry = Entry(frm_M,  textvariable=self.sourceFileName)
         self.sourceFileEntry.pack()
 
-        self.selectSourceButton = Button(frame, text="选择源文件", command=self.selectSourceFile)
-        self.selectSourceButton.pack(side=LEFT)
+        self.selectSourceButton = Button(frm_R, text="选择源文件", command=self.selectSourceFile)
+        self.selectSourceButton.pack(side=RIGHT)
         # 目标文件
-        self.desFileLabel = Label(frame, text="目标文件：")
-        self.desFileLabel.pack()
+        self.desFileLabel = Label(frm_L, text="目标文件：")
+        self.desFileLabel.pack(side=LEFT)
         
         self.desFileName = StringVar()
-        self.desFileEntry = Entry(frame, textvariable=self.desFileName)
+        self.desFileEntry = Entry(frm_M, textvariable=self.desFileName)
         self.desFileEntry.pack()
 
         # 起始位置
-        self.startPosLabel= Label(frame, text="开始位置：")
-        self.startPosLabel.pack()
+        self.startPosLabel= Label(frm_L, text="开始位置：")
+        self.startPosLabel.pack(side=LEFT)
         
         self.startPosStr= StringVar()
-        self.startPosEntry= Entry(frame, textvariable=self.startPosStr)
+        self.startPosEntry= Entry(frm_M, textvariable=self.startPosStr)
         self.startPosEntry.pack()
 
-        self.endPosLabel= Label(frame, text="结束位置：")
-        self.endPosLabel.pack()
+        self.endPosLabel= Label(frm_L, text="结束位置：")
+        self.endPosLabel.pack(side=LEFT)
         
         self.endPosStr= StringVar()
-        self.endPosEntry= Entry(frame, textvariable=self.endPosStr)
+        self.endPosEntry= Entry(frm_M, textvariable=self.endPosStr)
         self.endPosEntry.pack()
 
-        self.formateLabel= Label(frame, text="格式：")
-        self.formateLabel.pack()
+        self.formateLabel= Label(frm_L, text="格式：")
+        self.formateLabel.pack(side=LEFT)
         
         self.formateStr= StringVar()
-        self.formateEntry = Entry(frame, textvariable=self.formateStr)
+        self.formateEntry = Entry(frm_M, textvariable=self.formateStr)
         self.formateEntry.pack()
 
 
 
 
-        self.button = Button(frame, text="Start~", command=self.start)
-        self.button.pack(side=LEFT)
+        self.button = Button(frm_L, text="Start~", command=self.start)
+        self.button.pack(side=BOTTOM)
+        frm_L.pack(side=LEFT)
+        frm_R.pack(side=RIGHT)
+        frm_M.pack()
     def start(self):
         """docstring for start"""
         # print("begin to start", self.desFileName.get())
