@@ -1,0 +1,5 @@
+.main.py.swp
+ffmpeg/bin/ffmpeg.exe
+ffmpeg/*.*
+ffmpeg/bin/ffplay.exe
+ffmpeg
