@@ -17,65 +17,94 @@ class ToolApp(object):
 
         frm = Frame(root)
 
-        frm_L = Frame(frm)
-        frm_M = Frame(frm)
-        frm_R = Frame(frm)
+        frm_source = Frame(frm)
+        frm_dest = Frame(frm)
+        frm_formate = Frame(frm)
+        self.frm_cutPoints = Frame(frm)
 
         frm_B = Frame(root)
         # 源文件
-        self.sourceFileLabel = Label(frm_L, text="源文件：")
-        self.sourceFileLabel.pack(side=TOP)
+        self.sourceFileLabel = Label(frm_source, text="源文件：")
+        self.sourceFileLabel.pack(side=LEFT)
 
         self.sourceFileName = StringVar()
-        self.sourceFileEntry = Entry(frm_M,  textvariable=self.sourceFileName)
+        self.sourceFileEntry = Entry(frm_source,  textvariable=self.sourceFileName)
         self.sourceFileName.set("请选择源文件")
-        self.sourceFileEntry.pack()
+        self.sourceFileEntry.pack(side=LEFT)
 
-        self.selectSourceButton = Button(frm_R, text="选择源文件", command=self.selectSourceFile)
-        self.selectSourceButton.pack()
+        self.selectSourceButton = Button(frm_source, text="选择源文件", command=self.selectSourceFile)
+        self.selectSourceButton.pack(side=LEFT)
         # 目标文件
-        self.desFileLabel = Label(frm_L, text="目标文件：")
-        self.desFileLabel.pack(side=TOP)
+        self.desFileLabel = Label(frm_dest, text="目标文件：")
+        self.desFileLabel.pack(side=LEFT)
         
         self.desFileName = StringVar()
-        self.desFileEntry = Entry(frm_M, textvariable=self.desFileName)
-        self.desFileEntry.pack()
+        self.desFileEntry = Entry(frm_dest, textvariable=self.desFileName)
+        self.desFileEntry.pack(side=LEFT)
 
-        # 起始位置
-        self.startPosLabel= Label(frm_L, text="开始位置：")
-        self.startPosLabel.pack(side=TOP)
-        
-        self.startPosStr= StringVar()
-        self.startPosEntry= Entry(frm_M, textvariable=self.startPosStr)
-        self.startPosEntry.pack()
-
-        self.endPosLabel= Label(frm_L, text="结束位置：")
-        self.endPosLabel.pack(side=TOP)
-        
-        self.endPosStr= StringVar()
-        self.endPosEntry= Entry(frm_M, textvariable=self.endPosStr)
-        self.endPosEntry.pack()
-
-        self.formateLabel= Label(frm_L, text="格式：")
-        self.formateLabel.pack(side=TOP)
+        self.formateLabel= Label(frm_formate, text="格式：")
+        self.formateLabel.pack(side=LEFT)
         
         self.formateStr= StringVar()
         # self.formateEntry = Entry(frm_M, textvariable=self.formateStr)
         # self.formateEntry.pack()
-        self.formateCombobox = ttk.Combobox(frm_M, textvariable=self.formateStr)
+        self.formateCombobox = ttk.Combobox(frm_formate, textvariable=self.formateStr)
         self.formateCombobox['value'] = ('mp4','mov','avi','mpeg')
-        self.formateCombobox.pack()
+        self.formateCombobox.pack(side=LEFT)
 
+        # 起始位置
+        frm_cutPoint1 = Frame(self.frm_cutPoints)
+
+ 
+        self.startPosLabel= Label(frm_cutPoint1, text="开始位置：")
+        self.startPosLabel.pack(side=LEFT)
+        
+        self.startPosStr= StringVar()
+        self.startPosEntry= Entry(frm_cutPoint1, textvariable=self.startPosStr)
+        self.startPosEntry.pack(side=LEFT)
+
+        self.endPosLabel= Label(frm_cutPoint1, text="结束位置：")
+        self.endPosLabel.pack(side=LEFT)
+        
+        self.endPosStr= StringVar()
+        self.endPosEntry= Entry(frm_cutPoint1, textvariable=self.endPosStr)
+        self.endPosEntry.pack(side=LEFT)
+        frm_cutPoint1.pack(side=TOP)
+
+        #开始按钮
+        self.button = Button(frm_B, text="add~", command=self.addCutPoint)
+        self.button.pack(side=BOTTOM)
 
         self.button = Button(frm_B, text="Start~", command=self.start)
         self.button.pack(side=BOTTOM)
-        frm_L.pack(side=LEFT)
-        frm_M.pack(side=LEFT)
-        # frm_M.pack()
-        frm_R.pack(side=TOP, anchor=W)
-        frm.pack()
-        frm_B.pack()
+
+
+        frm_source.pack(side=TOP, anchor=W)
+        frm_dest.pack(side=TOP, anchor=W)
+        frm_formate.pack(side=TOP, anchor=W)
+        self.frm_cutPoints.pack(side=TOP, anchor=W)
+
+
+        frm.pack(side=TOP)
+        frm_B.pack(side=TOP)
         root.pack()
+        
+    def addCutPoint(self):
+        frm_cutPointNew = Frame(self.frm_cutPoints)
+        self.startPosLabel= Label(frm_cutPointNew, text="开始位置：")
+        self.startPosLabel.pack(side=LEFT)
+        
+        self.startPosStr= StringVar()
+        self.startPosEntry= Entry(frm_cutPointNew, textvariable=self.startPosStr)
+        self.startPosEntry.pack(side=LEFT)
+
+        self.endPosLabel= Label(frm_cutPointNew, text="结束位置：")
+        self.endPosLabel.pack(side=LEFT)
+        
+        self.endPosStr= StringVar()
+        self.endPosEntry= Entry(frm_cutPointNew, textvariable=self.endPosStr)
+        self.endPosEntry.pack(side=LEFT)
+        frm_cutPointNew.pack(side=TOP)
         
     def start(self):
         """docstring for start"""
