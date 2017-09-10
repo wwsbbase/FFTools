@@ -22,6 +22,8 @@ class ToolApp(object):
         frm_formate = Frame(frm)
         self.frm_cutPoints = Frame(frm)
 
+        self.cutPoints_objects = {}
+
         frm_B = Frame(root)
         # 源文件
         self.sourceFileLabel = Label(frm_source, text="源文件：")
@@ -75,6 +77,9 @@ class ToolApp(object):
         self.button = Button(frm_B, text="add~", command=self.addCutPoint)
         self.button.pack(side=BOTTOM)
 
+        self.button = Button(frm_B, text="remove~", command=self.removeCutPoint)
+        self.button.pack(side=BOTTOM)
+
         self.button = Button(frm_B, text="Start~", command=self.start)
         self.button.pack(side=BOTTOM)
 
@@ -91,20 +96,28 @@ class ToolApp(object):
         
     def addCutPoint(self):
         frm_cutPointNew = Frame(self.frm_cutPoints)
-        self.startPosLabel= Label(frm_cutPointNew, text="开始位置：")
-        self.startPosLabel.pack(side=LEFT)
+        startPosLabel= Label(frm_cutPointNew, text="开始位置：")
+        startPosLabel.pack(side=LEFT)
         
-        self.startPosStr= StringVar()
-        self.startPosEntry= Entry(frm_cutPointNew, textvariable=self.startPosStr)
-        self.startPosEntry.pack(side=LEFT)
+        startPosStr= StringVar()
+        startPosEntry= Entry(frm_cutPointNew, textvariable=self.startPosStr)
+        startPosEntry.pack(side=LEFT)
 
-        self.endPosLabel= Label(frm_cutPointNew, text="结束位置：")
-        self.endPosLabel.pack(side=LEFT)
+        endPosLabel= Label(frm_cutPointNew, text="结束位置：")
+        endPosLabel.pack(side=LEFT)
         
-        self.endPosStr= StringVar()
-        self.endPosEntry= Entry(frm_cutPointNew, textvariable=self.endPosStr)
-        self.endPosEntry.pack(side=LEFT)
+        endPosStr= StringVar()
+        endPosEntry= Entry(frm_cutPointNew, textvariable=self.endPosStr)
+        endPosEntry.pack(side=LEFT)
         frm_cutPointNew.pack(side=TOP)
+
+
+        self.cutPoints_objects.add(frm_cutPointNew)
+
+        self.temp = frm_cutPointNew
+        
+    def removeCutPoint(self):
+        self.temp.destroy()
         
     def start(self):
         """docstring for start"""
