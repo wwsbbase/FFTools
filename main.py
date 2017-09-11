@@ -22,7 +22,9 @@ class ToolApp(object):
         frm_formate = Frame(frm)
         self.frm_cutPoints = Frame(frm)
 
-        self.cutPoints_objects = {}
+        self.cutPoints_objects = []
+        self.cutPoints_start_values = []
+        self.cutPoints_end_values = []
 
         frm_B = Frame(root)
         # 源文件
@@ -55,23 +57,7 @@ class ToolApp(object):
         self.formateCombobox.pack(side=LEFT)
 
         # 起始位置
-        frm_cutPoint1 = Frame(self.frm_cutPoints)
-
- 
-        self.startPosLabel= Label(frm_cutPoint1, text="开始位置：")
-        self.startPosLabel.pack(side=LEFT)
-        
-        self.startPosStr= StringVar()
-        self.startPosEntry= Entry(frm_cutPoint1, textvariable=self.startPosStr)
-        self.startPosEntry.pack(side=LEFT)
-
-        self.endPosLabel= Label(frm_cutPoint1, text="结束位置：")
-        self.endPosLabel.pack(side=LEFT)
-        
-        self.endPosStr= StringVar()
-        self.endPosEntry= Entry(frm_cutPoint1, textvariable=self.endPosStr)
-        self.endPosEntry.pack(side=LEFT)
-        frm_cutPoint1.pack(side=TOP)
+        self.addCutPoint()
 
         #开始按钮
         self.button = Button(frm_B, text="add~", command=self.addCutPoint)
@@ -93,6 +79,11 @@ class ToolApp(object):
         frm.pack(side=TOP)
         frm_B.pack(side=TOP)
         root.pack()
+        print(os.path.abspath(__file__))
+        print(sys.path[0])
+
+
+
         
     def addCutPoint(self):
         frm_cutPointNew = Frame(self.frm_cutPoints)
@@ -100,40 +91,64 @@ class ToolApp(object):
         startPosLabel.pack(side=LEFT)
         
         startPosStr= StringVar()
-        startPosEntry= Entry(frm_cutPointNew, textvariable=self.startPosStr)
+        startPosEntry= Entry(frm_cutPointNew, textvariable=startPosStr)
+        startPosStr.set("00:00:00.00")
         startPosEntry.pack(side=LEFT)
 
         endPosLabel= Label(frm_cutPointNew, text="结束位置：")
         endPosLabel.pack(side=LEFT)
         
         endPosStr= StringVar()
-        endPosEntry= Entry(frm_cutPointNew, textvariable=self.endPosStr)
+        endPosEntry= Entry(frm_cutPointNew, textvariable=endPosStr)
+        endPosStr.set("00:00:00.00")
         endPosEntry.pack(side=LEFT)
         frm_cutPointNew.pack(side=TOP)
 
+        self.cutPoints_objects.append(frm_cutPointNew)
+        self.cutPoints_start_values.append(startPosStr)
+        self.cutPoints_end_values.append(endPosStr)
 
-        self.cutPoints_objects.add(frm_cutPointNew)
+        print(len(self.cutPoints_objects))
 
-        self.temp = frm_cutPointNew
         
     def removeCutPoint(self):
-        self.temp.destroy()
-        
+        if len(self.cutPoints_objects) < 2:
+            print("the last point")
+            return
+        else:
+            lastOne = self.cutPoints_objects[-1]
+            lastOne.destroy()
+            del self.cutPoints_objects[-1]
+            del self.cutPoints_start_values[-1]
+            del self.cutPoints_end_values[-1]
+
+            print(len(self.cutPoints_objects))
+
     def start(self):
         """docstring for start"""
         # print("begin to start", self.desFileName.get())
         # os.system("./ffmpeg/bin/ffmpeg.exe")
         # exePath = "D:/GitHub/FFTools/ffmpeg/bin/ffmpeg.exe"
-        exePath = "D:/Project/GitHub/FFTools/ffmpeg/bin/ffmpeg.exe"
-        exePath = exePath + " -i " + "\"" + self.sourceFileName.get() + "\""
-        exePath = exePath + " -c copy"
-        exePath = exePath + " -ss " + self.startPosStr.get()
-        exePath = exePath + " -to " + self.endPosStr.get()
-        exePath = exePath + " -f " + self.formateStr.get()
-        exePath = exePath + " " + self.desFileName.get() + "." + self.formateStr.get()
-        print(exePath)
-        self.subpro = subprocess.Popen(exePath, shell=True)
-        self.subpro.wait()
+
+        #exePath = "D:/Project/GitHub/FFTools/ffmpeg/bin/ffmpeg.exe"
+        filePath = sys.path[0] + "/ffmpeg/bin/ffmpeg.exe"
+
+        
+        for index in range(0,len(self.cutPoints_objects)):
+            exePath = filePath
+            exePath = exePath + " -i " + "\"" + self.sourceFileName.get() + "\""
+            exePath = exePath + " -c copy"
+            exePath = exePath + " -ss " + self.cutPoints_start_values[index].get()
+            exePath = exePath + " -to " + self.cutPoints_end_values[index].get()
+            exePath = exePath + " -f " + self.formateStr.get()
+            if index == 0:
+                exePath = exePath + " " + self.desFileName.get() + "." + self.formateStr.get()
+            else:
+                exePath = exePath + " " + self.desFileName.get() + "_" + str(index) + "." + self.formateStr.get()
+            print(exePath)
+            self.subpro = subprocess.Popen(exePath, shell=True)
+            self.subpro.wait()
+
 
     def selectSourceFile(self):
         """docstring for selectSourceFile"""
