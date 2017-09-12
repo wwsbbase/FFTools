@@ -7,6 +7,10 @@ from tkFileDialog import *
 import os
 import subprocess
 
+#import sys
+#reload(sys)
+#sys.setdefaultencoding('utf8')
+
 class ToolApp(object):
     """docstring for ToolApp"""
     def __init__(self, arg):
@@ -142,7 +146,11 @@ class ToolApp(object):
         
         for index in range(0,len(self.cutPoints_objects)):
             exePath = filePath
-            exePath = exePath + " -i " + "\"" + self.sourceFileName.get() + "\""
+            sourceFilePath = self.sourceFileName.get()
+            sourceFilePath = sourceFilePath.encode('gbk')  
+            #unicode(sourceFilePath, 'UTF-8')
+
+            exePath = exePath + " -i " + sourceFilePath 
             exePath = exePath + " -c copy"
             exePath = exePath + " -ss " + self.cutPoints_start_values[index].get()
             exePath = exePath + " -to " + self.cutPoints_end_values[index].get()
@@ -152,6 +160,7 @@ class ToolApp(object):
             else:
                 exePath = exePath + " " + self.desFileName.get() + "_" + str(index) + "." + self.formateStr.get()
             print(exePath)
+
             self.subpro = subprocess.Popen(exePath, shell=True)
             self.subpro.wait()
 
