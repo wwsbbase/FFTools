@@ -147,7 +147,15 @@ class ToolApp(object):
         for index in range(0,len(self.cutPoints_objects)):
             exePath = filePath
             sourceFilePath = self.sourceFileName.get()
-            sourceFilePath = sourceFilePath.encode('gbk')  
+            sourceFilePath = "\"" + sourceFilePath + "\""
+            sourceFilePath = sourceFilePath.encode('gbk')
+
+            
+            FileTimeName = self.GetFileTimeName(index)
+
+            desFilePath = self.desFileName.get()
+            desFilePath = desFilePath + FileTimeName
+            desFilePath = desFilePath.encode('gbk')
             #unicode(sourceFilePath, 'UTF-8')
 
             exePath = exePath + " -i " + sourceFilePath 
@@ -156,18 +164,27 @@ class ToolApp(object):
             exePath = exePath + " -to " + self.cutPoints_end_values[index].get()
             exePath = exePath + " -f " + self.formateStr.get()
             if index == 0:
-                exePath = exePath + " " + self.desFileName.get() + "." + self.formateStr.get()
+                exePath = exePath + " " + "\"" + desFilePath + "." + self.formateStr.get() + "\""
             else:
-                exePath = exePath + " " + self.desFileName.get() + "_" + str(index) + "." + self.formateStr.get()
+                exePath = exePath + " " + "\"" + desFilePath + "_" + str(index) + "." + self.formateStr.get() + "\""
             print(exePath)
-
+            
             self.subpro = subprocess.Popen(exePath, shell=True)
             self.subpro.wait()
+
+    def GetFileTimeName(self, index):
+        FileTimeName = self.cutPoints_start_values[index].get() + "-" + self.cutPoints_end_values[index].get()
+        #return FileTimeName
+        return ""
 
 
     def selectSourceFile(self):
         """docstring for selectSourceFile"""
-        self.sourceFileName.set( askopenfilename())
+        filePath = askopenfilename()
+        self.sourceFileName.set(filePath)
+
+        filename = os.path.splitext(filePath)[0]
+        self.desFileName.set(filename)
         
 
 def createUI():
