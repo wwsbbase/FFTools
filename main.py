@@ -17,10 +17,11 @@ class ToolApp(object):
 
         frm = Frame(root)
 
-        frm_source = Frame(frm)
-        frm_dest = Frame(frm)
-        frm_formate = Frame(frm)
-        self.frm_cutPoints = Frame(frm)
+        frm_source = Frame(frm, pady=5)
+        frm_dest = Frame(frm, pady=5)
+        frm_formate = Frame(frm, pady=5)
+        frm_control = Frame(frm, pady=5)
+        self.frm_cutPoints = Frame(frm, pady=5)
 
         self.cutPoints_objects = []
         self.cutPoints_start_values = []
@@ -34,17 +35,17 @@ class ToolApp(object):
         self.sourceFileName = StringVar()
         self.sourceFileEntry = Entry(frm_source,  textvariable=self.sourceFileName)
         self.sourceFileName.set("请选择源文件")
-        self.sourceFileEntry.pack(side=LEFT)
+        self.sourceFileEntry.pack(side=LEFT, padx=25)
 
         self.selectSourceButton = Button(frm_source, text="选择源文件", command=self.selectSourceFile)
-        self.selectSourceButton.pack(side=LEFT)
+        self.selectSourceButton.pack(side=LEFT, padx=10)
         # 目标文件
-        self.desFileLabel = Label(frm_dest, text="目标文件：")
+        self.desFileLabel = Label(frm_dest, text="目标文件名：")
         self.desFileLabel.pack(side=LEFT)
         
         self.desFileName = StringVar()
         self.desFileEntry = Entry(frm_dest, textvariable=self.desFileName)
-        self.desFileEntry.pack(side=LEFT)
+        self.desFileEntry.pack(side=LEFT, padx=1)
 
         self.formateLabel= Label(frm_formate, text="格式：")
         self.formateLabel.pack(side=LEFT)
@@ -54,25 +55,30 @@ class ToolApp(object):
         # self.formateEntry.pack()
         self.formateCombobox = ttk.Combobox(frm_formate, textvariable=self.formateStr)
         self.formateCombobox['value'] = ('mp4','mov','avi','mpeg')
-        self.formateCombobox.pack(side=LEFT)
+        self.formateCombobox.pack(side=LEFT, padx=36)
+
+        # 添加剪切点按钮
+        self.button = Button(frm_control, text=" + ", command=self.addCutPoint, width=10)
+        self.button.pack(side=LEFT)
+        # 移出剪切点按钮
+        self.button = Button(frm_control, text=" - ", command=self.removeCutPoint, width=10)
+        self.button.pack(side=RIGHT)
 
         # 起始位置
         self.addCutPoint()
 
         #开始按钮
-        self.button = Button(frm_B, text="add~", command=self.addCutPoint)
-        self.button.pack(side=BOTTOM)
 
-        self.button = Button(frm_B, text="remove~", command=self.removeCutPoint)
-        self.button.pack(side=BOTTOM)
 
-        self.button = Button(frm_B, text="Start~", command=self.start)
-        self.button.pack(side=BOTTOM)
+        self.button = Button(frm_B, text="Start~", command=self.start, width=20)
+        self.button.pack(side=BOTTOM, anchor=S)
 
 
         frm_source.pack(side=TOP, anchor=W)
         frm_dest.pack(side=TOP, anchor=W)
         frm_formate.pack(side=TOP, anchor=W)
+        frm_control.pack(side=TOP)
+
         self.frm_cutPoints.pack(side=TOP, anchor=W)
 
 
@@ -159,7 +165,7 @@ def createUI():
     """docstring for createUI"""
     win = Tk()
     win.title("FFTools")
-    win.geometry("600x300")
+    win.geometry("600x350")
     # openfilename = askopenfilename()
     app = ToolApp(win)
     # print(openfilename)

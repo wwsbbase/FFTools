@@ -1,0 +1,539 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tos",
+				"tostring"
+			],
+			[
+				"Open",
+				"OpenMessageBox"
+			],
+			[
+				"OnR",
+				"OnRefreshServerList"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 5872,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				":q",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				":0",
+				":0 - BOF"
+			],
+			[
+				":",
+				":$ - EOF"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 253.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/workSpace/Mobile4.0/U3DBuYu118_ToLua/Assets/Lua/BY/Panel_Hall.lua",
+		"/D/workSpace/Mobile4.0/U3DBuYu118_ToLua/Assets/Lua/GF/ProtolProcesser.lua",
+		"/D/workSpace/Mobile4.0/U3DBuYu118_ToLua/Assets/Lua/GF/AccountManager.lua",
+		"/D/workSpace/Mobile4.0/U3DBuYu118_ToLua/Assets/Lua/BY/Game_StoreItems.lua",
+		"/D/workSpace/Mobile4.0/U3DBuYu118_ToLua/Assets/Lua/BY/Game_FishIntroduceItems.lua.meta",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/HallView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/OnlineView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/proto/Request.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/RegisterView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/ViewManager.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/StoreView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/Network.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/Config.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_Logic/UpdateManager.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/LoginView1.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/proto/OnlineResponse.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/proto/Response.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/proto/MessageMap.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/proto/ErrorCode.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/CgActView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/GameTips.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/MaiMaView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/MainView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/LoginView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/PersonView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_View/GameReviewView.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Main.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/proto/BoolResponse.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/functions.lua",
+		"/C/Sublime Text Build 3103 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Sublime Text Build 3103 x64/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Sublime Text Build 3103 x64/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_Logic/Game.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/_Model/Player.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/Action.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/HttpHelper.lua",
+		"/D/workSpace/Mobile4.0/U3DXueZhanDaoDi/Assets/_LuaScript/Common/Environment.lua",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/BY/Panel_SwitchLogin.lua",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/BY/DataManager.lua",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/BY/Panel_Main.lua",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/BY/Panel_NeedPay.lua.meta",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/GF/ProtolProcesser.lua",
+		"/D/workSpace/Mobile4.0/U3DBuYu118_ToLua/Assets/Lua/BY/UnityToLua.lua",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/BY/DataManager.lua.meta",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/BY/GameControl.lua",
+		"/D/workSpace/Mobile4.0/U3DWhacAMoleTagToLua/Assets/Lua/BY/GameMessageTags.lua",
+		"/J/tool/Sublime Text/Data/Packages/User/Package Control.sublime-settings",
+		"/J/tool/Sublime Text/Data/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"*.lua",
+			"*.txt",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"10",
+			"OnJiuJiJinResponse",
+			"SendGetQPUserInfoByParnerUserIDReq",
+			"OnClickRoomNotEnoughMoney",
+			"GetUserMoney",
+			"_sCertification",
+			"_jiujijinStatus",
+			"CheckCanGetJiuJiJin",
+			"OnClickRoomNotEnoughMoney",
+			"NO",
+			"CPanelHall",
+			"OnRoomClick",
+			"roompanel",
+			"HallEnterGameRoom",
+			"enterroom",
+			"NOT_ENOUGH_MOENY",
+			"NOT_EN",
+			"ShowTicketAnimation",
+			"InitAnimationPanel",
+			"勾选",
+			"isOn",
+			"勾选",
+			"点券",
+			"购买点券时",
+			"不足",
+			"GetAntiAddiction",
+			"FAILD_BY_ANTIADDICTION",
+			"anti",
+			"ConnectTimeOut",
+			"GetException",
+			"needlogin",
+			"OnConnected",
+			"ConnectCallback",
+			"服务器连接成功",
+			"OnConnected",
+			"connectstate",
+			"ConnectType",
+			"connectstate",
+			"DoReLogin",
+			"connectstate",
+			"ChageConnected",
+			"OnSocketError",
+			"Replace",
+			"replace",
+			"DoReLogin",
+			"OnSocketError",
+			"DoReLogin",
+			"ConnectToServer",
+			"connectServer",
+			"SendHallPingReq",
+			"网络连接错误",
+			"logError(",
+			"logError",
+			"DoReLogin",
+			"ConnectToServer",
+			"OnConnectTimeOut",
+			"ConnectToServer",
+			"StartConnect",
+			"ConnectToServer",
+			"CONNECT_FAILD",
+			"连接服务器失败",
+			"网络连接失败，请检查网络重试",
+			"OnSocketError",
+			"logError",
+			"MessageMap not find",
+			"网络连接失败，请检查网络重试",
+			"OnSocket",
+			"DealMessage",
+			"MessageMap",
+			"messageTag",
+			"LinkBrokenProtection",
+			"MessageMap",
+			"MessageMap not find",
+			"OnS2CSendMessage",
+			"messagemap not found",
+			"ErrorValue",
+			"OnLogin",
+			"Replace(\"LoginView\")",
+			"viewmanager",
+			"ConnectType",
+			"IsConnected",
+			"UserExitGame",
+			"FAILD_BY_ANTIADDICTION",
+			"ViewManager.Replace",
+			"ViewManager",
+			"err_message",
+			"FAILD_BY_ANTIADDICTION",
+			"ErrorValue",
+			"FAILD_BY_ANTIADDICTION",
+			"AntiAdd",
+			"OnS2CSendMessage",
+			"MessageBox",
+			"ShowMsgBoxAntiAddiction",
+			"FAILD_BY_ANTIADDICTION",
+			"ENTERROOM_CUSTOM_ERRMSG",
+			"ERR_LOGIN_MOBILE_AUTHCODE_EXPECTED",
+			"OnS2CSendMessage",
+			"FAILD_BY_ANTIADDICTION",
+			"AntiAddiction",
+			"getJiuJiJinAddress",
+			"JiuJiJin",
+			"setServers",
+			"isRetryGetWebSG",
+			"OnRefreshServerList",
+			"ConnectUpdateCallBack",
+			"_tServers",
+			"CONNECT_FAILD",
+			"RetryGetWebSGInfo",
+			"GetUpdateServerInfo",
+			"TickManager",
+			"messagebox",
+			"ShowConfirmBox",
+			"connecttimeout",
+			"ConnectUpdateCallBack",
+			"RetryGetWebSGInfo",
+			"GetUpdateServerInfo",
+			"DownLoadUpdateJson",
+			"UpdateManager",
+			"RetryGetWebSGInfo",
+			"DownLoadUpdateJson",
+			"ConnectUpdateCallBack",
+			"send",
+			"sendHttpGet",
+			"ConnectTimeOut",
+			"OnConnectTimeOut",
+			"ConnectToServer",
+			"StartConnect",
+			"GetConnected"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"HallView",
+			"亲朋打地鼠金币"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5872,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2324,
+								2324
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1012.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "",
+	"project": "FFTools.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ha",
+				"_View\\HallView.lua"
+			],
+			[
+				"net",
+				"Common\\Network.lua"
+			],
+			[
+				"mainview",
+				"_View\\MainView.lua"
+			],
+			[
+				"login",
+				"_View\\LoginView.lua"
+			],
+			[
+				"config.lua",
+				"Common\\Config.lua"
+			],
+			[
+				"update",
+				"_Logic\\UpdateManager.lua"
+			],
+			[
+				"swi",
+				"_View\\StoreView.lua"
+			],
+			[
+				"swit",
+				"BY\\Panel_SwitchLogin.lua"
+			],
+			[
+				"protolprocess",
+				"GF\\ProtolProcesser.lua"
+			],
+			[
+				"uni",
+				"BY\\UnityToLua.lua"
+			],
+			[
+				"switch",
+				"BY\\Panel_SwitchLogin.lua"
+			],
+			[
+				"datamanager",
+				"BY\\DataManager.lua"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"showtip",
+				"ShowTip"
+			],
+			[
+				"",
+				"BoolCreateTableRsp"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 409.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
