@@ -33,50 +33,45 @@ class ToolApp(object):
 
         frm_B = Frame(root)
         # 源文件
-        self.sourceFileLabel = Label(frm_source, text="源文件：")
-        self.sourceFileLabel.pack(side=LEFT)
+        sourceFileLabel = Label(frm_source, text="源文件：")
+        sourceFileLabel.pack(side=LEFT)
 
         self.sourceFileName = StringVar()
-        self.sourceFileEntry = Entry(frm_source,  textvariable=self.sourceFileName)
+        sourceFileEntry = Entry(frm_source,  textvariable=self.sourceFileName, width=40)
         self.sourceFileName.set("请选择源文件")
-        self.sourceFileEntry.pack(side=LEFT, padx=25)
+        sourceFileEntry.pack(side=LEFT, padx=25)
 
-        self.selectSourceButton = Button(frm_source, text="选择源文件", command=self.selectSourceFile)
-        self.selectSourceButton.pack(side=LEFT, padx=10)
+        selectSourceButton = Button(frm_source, text="选择源文件", command=self.selectSourceFile)
+        selectSourceButton.pack(side=LEFT, padx=10)
         # 目标文件
-        self.desFileLabel = Label(frm_dest, text="目标文件名：")
-        self.desFileLabel.pack(side=LEFT)
+        desFileLabel = Label(frm_dest, text="目标文件名：")
+        desFileLabel.pack(side=LEFT)
         
         self.desFileName = StringVar()
-        self.desFileEntry = Entry(frm_dest, textvariable=self.desFileName)
-        self.desFileEntry.pack(side=LEFT, padx=1)
-
-        self.formateLabel= Label(frm_formate, text="格式：")
-        self.formateLabel.pack(side=LEFT)
+        desFileEntry = Entry(frm_dest, textvariable=self.desFileName, width=40)
+        desFileEntry.pack(side=LEFT, padx=1)
+        # 格式选择
+        formateLabel= Label(frm_formate, text="格式：")
+        formateLabel.pack(side=LEFT)
         
         self.formateStr= StringVar()
-        # self.formateEntry = Entry(frm_M, textvariable=self.formateStr)
-        # self.formateEntry.pack()
-        self.formateCombobox = ttk.Combobox(frm_formate, textvariable=self.formateStr)
-        self.formateCombobox['value'] = ('mp4','mov','avi','mpeg')
-        self.formateCombobox.pack(side=LEFT, padx=36)
+        formateCombobox = ttk.Combobox(frm_formate, textvariable=self.formateStr)
+        formateCombobox['value'] = ('mp4','mov','avi','mpeg')
+        formateCombobox.pack(side=LEFT, padx=36)
 
         # 添加剪切点按钮
-        self.button = Button(frm_control, text=" + ", command=self.addCutPoint, width=10)
-        self.button.pack(side=LEFT)
+        addButton = Button(frm_control, text=" + ", command=self.addCutPoint, width=10)
+        addButton.pack(side=LEFT)
         # 移出剪切点按钮
-        self.button = Button(frm_control, text=" - ", command=self.removeCutPoint, width=10)
-        self.button.pack(side=RIGHT)
+        cutButton = Button(frm_control, text=" - ", command=self.removeCutPoint, width=10)
+        cutButton.pack(side=RIGHT)
 
         # 起始位置
         self.addCutPoint()
 
         #开始按钮
-
-
-        self.button = Button(frm_B, text="Start~", command=self.start, width=20)
-        self.button.pack(side=BOTTOM, anchor=S)
-
+        startButton = Button(frm_B, text="Start~", command=self.start, width=20)
+        startButton.pack(side=BOTTOM, anchor=S)
 
         frm_source.pack(side=TOP, anchor=W)
         frm_dest.pack(side=TOP, anchor=W)
@@ -85,7 +80,6 @@ class ToolApp(object):
 
         self.frm_cutPoints.pack(side=TOP, anchor=W)
 
-
         frm.pack(side=TOP)
         frm_B.pack(side=TOP)
         root.pack()
@@ -93,8 +87,6 @@ class ToolApp(object):
         print(sys.path[0])
 
 
-
-        
     def addCutPoint(self):
         frm_cutPointNew = Frame(self.frm_cutPoints)
         startPosLabel= Label(frm_cutPointNew, text="开始位置：")
