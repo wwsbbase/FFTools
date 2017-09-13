@@ -163,17 +163,47 @@ class ToolApp(object):
             exePath = exePath + " -ss " + self.cutPoints_start_values[index].get()
             exePath = exePath + " -to " + self.cutPoints_end_values[index].get()
             exePath = exePath + " -f " + self.formateStr.get()
-            if index == 0:
-                exePath = exePath + " " + "\"" + desFilePath + "." + self.formateStr.get() + "\""
-            else:
-                exePath = exePath + " " + "\"" + desFilePath + "_" + str(index) + "." + self.formateStr.get() + "\""
+            #if index == 0:
+                #exePath = exePath + " " + "\"" + desFilePath + "." + self.formateStr.get() + "\""
+            #else:
+                #exePath = exePath + " " + "\"" + desFilePath + "_" + str(index) + "." + self.formateStr.get() + "\""
+
+            exePath = exePath + " " + "\"" + desFilePath + "." + self.formateStr.get() + "\""
             print(exePath)
             
             self.subpro = subprocess.Popen(exePath, shell=True)
             self.subpro.wait()
 
     def GetFileTimeName(self, index):
-        FileTimeName = self.cutPoints_start_values[index].get() + "-" + self.cutPoints_end_values[index].get()
+        startTimeName = self.cutPoints_start_values[index].get()
+        startTimeName = startTimeName.replace(":", "h", 1)
+        startTimeName = startTimeName.replace(":", "m", 1)
+        startTimeName = startTimeName.replace(".", "s", 1)
+
+        endTimeName = self.cutPoints_start_values[index].get()
+        endTimeName = endTimeName.replace(":", "h", 1)
+        endTimeName = endTimeName.replace(":", "m", 1)
+        endTimeName = endTimeName.replace(".", "s", 1)
+
+        FileTimeName = "(" + startTimeName + "~" + endTimeName + ")"
+        return FileTimeName
+        #return ""
+    def GetFileTimeNameTest(self):
+        index = 0
+
+        startTimeName = self.cutPoints_start_values[index].get()
+        startTimeName = startTimeName.replace(":", "h", 1)
+        startTimeName = startTimeName.replace(":", "m", 1)
+        startTimeName = startTimeName.replace(".", "s", 1)
+
+        endTimeName = self.cutPoints_start_values[index].get()
+        endTimeName = endTimeName.replace(":", "h", 1)
+        endTimeName = endTimeName.replace(":", "m", 1)
+        endTimeName = endTimeName.replace(".", "s", 1)
+
+        FileTimeName = "(" + startTimeName + "~" + endTimeName + ")"
+
+        print FileTimeName
         #return FileTimeName
         return ""
 
