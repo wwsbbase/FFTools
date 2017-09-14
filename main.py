@@ -41,8 +41,13 @@ class ToolApp(object):
         self.sourceFileName.set("请选择源文件")
         sourceFileEntry.pack(side=LEFT, padx=25)
 
-        selectSourceButton = Button(frm_source, text="选择源文件", command=self.selectSourceFile)
-        selectSourceButton.pack(side=LEFT, padx=10)
+        selectSourceButton = Button(frm_source, text="...", command=self.selectSourceFile, width=5)
+        selectSourceButton.pack(side=LEFT, padx=5)
+
+        #播放按钮
+        playButton = Button(frm_source, text="play~", command=self.play, width=5)
+        playButton.pack(side=LEFT, padx=1)
+
         # 目标文件
         desFileLabel = Label(frm_dest, text="目标文件名：")
         desFileLabel.pack(side=LEFT)
@@ -71,7 +76,8 @@ class ToolApp(object):
 
         #开始按钮
         startButton = Button(frm_B, text="Start~", command=self.start, width=20)
-        startButton.pack(side=BOTTOM, anchor=S)
+        startButton.pack(side=LEFT, anchor=S)
+
 
         frm_source.pack(side=TOP, anchor=W)
         frm_dest.pack(side=TOP, anchor=W)
@@ -125,6 +131,16 @@ class ToolApp(object):
             del self.cutPoints_end_values[-1]
 
             print(len(self.cutPoints_objects))
+
+    def play(self):
+        filePath = sys.path[0] + "/ffmpeg/bin/ffplay.exe"
+        sourceFilePath = self.sourceFileName.get()
+        sourceFilePath = "\"" + sourceFilePath + "\""
+        sourceFilePath = sourceFilePath.encode('gbk')
+        exePath = filePath + " " + sourceFilePath
+        print(exePath)     
+        self.subplaypro = subprocess.Popen(exePath, shell=True)
+        self.subplaypro.wait()
 
     def start(self):
         """docstring for start"""
