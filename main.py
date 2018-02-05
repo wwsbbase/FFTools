@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from Tkinter import *
-import ttk
-from Tkconstants import *
-from tkFileDialog import *
+from tkinter import *
+from tkinter import ttk
+# from Tkconstants import *
+# from tkFileDialog import *
+from tkinter import filedialog
 import os
 import subprocess
 
@@ -211,14 +212,14 @@ class ToolApp(object):
 
         FileTimeName = "(" + startTimeName + "~" + endTimeName + ")"
 
-        print FileTimeName
+        print(FileTimeName)
         #return FileTimeName
         return ""
 
 
     def selectSourceFile(self):
         """docstring for selectSourceFile"""
-        filePath = askopenfilename()
+        filePath = filedialog.askopenfilename()
         self.sourceFileName.set(filePath)
 
         filename = os.path.splitext(filePath)[0]
